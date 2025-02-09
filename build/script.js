@@ -143,7 +143,7 @@ function addToDo(event) {
     date.value = ""
     category.value = "Home"
     saveTodos()
-    render()
+    render(filteredTodos)
      
   } else {
     alert("Please fill in all fields.")
