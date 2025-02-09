@@ -24,6 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#NewTodo").classList.toggle("hidden")
   })
   document.querySelector("#NewTodo").addEventListener("submit", addToDo)
+  document.querySelector('#NewTodo').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      resetForm(); 
+  });
 })
 
 function loadTodos() {
@@ -135,15 +139,25 @@ function addToDo(event) {
       category,
     }
     todos.push(newToDo)
+    title.value = ""
+    date.value = ""
+    category.value = "Home"
     saveTodos()
     render()
-    updateCounts()
-
-    document.querySelector("#TodoNameField").value = ""
-    document.querySelector("#TodoDateField").value = ""
-    document.querySelector("#List").value = "Home"
+     
   } else {
     alert("Please fill in all fields.")
   }
+}
+
+function resetForm() {
+    const title = document.querySelector("#TodoNameField")
+  const date = document.querySelector("#TodoDateField")
+  const category = document.querySelector("#List")
+    const form = document.querySelector("#NewTodo")
+    form.classList.add("hidden")
+    title.value = "";
+    date.value = "";
+    category.value = "Home";
 }
 
