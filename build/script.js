@@ -60,8 +60,8 @@ function render(filteredTodos = todos) {
   filteredTodos.forEach((todo) => {
     const card = document.createElement("div")
     card.className =
-      "flex gap-2 p-5 justify-between bg-[#E3DEF3] rounded-2xl text-lg  mt-4"
-    card.innerHTML = `<div class="flex gap-2">
+      "sm:flex flex-col sm:flex-row sm:gap-2 p-5 sm:justify-between bg-[#E3DEF3] rounded-2xl sm:text-lg mt-4"
+    card.innerHTML = `<div class="flex gap-2 px-2">
                 <input class="px-2 py-1 cursor-pointer" type="checkbox" ${
                   todo.completed ? "checked" : ""
                 } data-id="${todo.id}">
@@ -69,9 +69,11 @@ function render(filteredTodos = todos) {
       todo.title
     }</p>
             </div>
-            <div class="flex gap-2">
+            <div class="flex gap-2 flex-col sm:flex-row">
+            <div class="flex justify-between ">
                 <p class="px-2 py-1 w-[90px]">${todo.category}</p>
                 <p class="px-2 py-1">${todo.date}</p>
+                </div>
                 <button class="rounded-xl bg-[#9480DB] px-2 py-1 cursor-pointer" data-id="${
                   todo.id
                 }">Delete</button>

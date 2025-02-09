@@ -7,27 +7,27 @@
     <link rel="stylesheet" href="./build/output.css">
     <script src="build/script.js"></script>
 </head>
-<body class="bg-[#f6f5f9] text-[#0e0d12] flex">
-    <div class="flex flex-col p-8 px-3 h-screen bg-[#E3DEF3] rounded-r-2xl lg:w-[10%] w-36">
-        <div class="flex flex-col mb-2">
+<body class="bg-[#f6f5f9] text-[#0e0d12] sm:flex">
+    <div class="flex sm:flex-col justify-between sm:justify-start flex-row p-8 px-3 sm:h-screen w-screen  bg-[#E3DEF3] sm:rounded-r-2xl sm:rounded-bl-none rounded-b-2xl lg:w-[10%] sm:w-36">
+        <div class="flex sm:flex-col  flex-row sm:mb-2">
             <button id="Today" class="text-left p-1 rounded-lg hover:bg-[#9480db] transition-all 0.3s cursor-pointer">Today</button>
             <button id="Upcoming" class="text-left p-1 rounded-lg hover:bg-[#9480db] transition-all 0.3s cursor-pointer">Upcoming</button>
         </div>
-        <div class="flex flex-col mt-4">
+        <div class="flex sm:flex-col flex-row sm:mt-4">
             <button id="Home" class="text-left p-1 rounded-lg hover:bg-[#9480db] transition-all 0.3s cursor-pointer">Home</button>
             <button id="Work" class="text-left p-1 rounded-lg hover:bg-[#9480db] transition-all 0.3s cursor-pointer">Work</button>
             <button id="Hobbies" class="text-left p-1 rounded-lg hover:bg-[#9480db] transition-all 0.3s cursor-pointer">Hobbies</button>
         </div>
     </div>
-    <div class="p-8 w-[80%] mx-auto">
-        <div class="flex justify-between ">
-            <h1 id="CurrentView" class="text-5xl align-middle"></h1>
-            <button id="NewTodoBtn" class="rounded-xl bg-[#9480DB] px-2 py-1 cursor-pointer">New ToDo</button>
-        </div>
+    <div class="p-8 sm:w-[80%] w-[100%] sm:mx-auto ">
+        <div class="flex align-middle justify-between ">
+            <h1 id="CurrentView" class="text-5xl"></h1>
+            <button id="NewTodoBtn" class="rounded-xl bg-[#9480DB] px-2 sm:py-1 py-4 sm:my-0  cursor-pointer">New ToDo</button>
+        </div> 
         <div id="NewTodo" class="hidden">
-        <div class="flex gap-2 p-5 justify-between bg-[#E3DEF3] rounded-2xl text-lg mt-4">
+        <div class="flex gap-2 p-5 sm:justify-between flex-col sm:flex-row bg-[#E3DEF3] rounded-2xl sm:text-lg mt-4 sm:w-[100%]">
             <input id="TodoNameField" type="text" placeholder="New ToDo">
-            <form class="flex gap-2">
+            <form class="flex gap-2 flex-col sm:flex-row">
                 <select id="List" name="lists">
                     <option value="Home">Home</option>
                     <option value="Work">Work</option>
@@ -38,8 +38,22 @@
             </form>
         </div>
     </div>
-        <div id="cards" class="mt-4">
-            
+        <div id="cards" class="mt-4 w-[100%] sm:w-auto">
+            <div class="sm:flex flex-col sm:flex-row sm:gap-2 p-5 sm:justify-between bg-[#E3DEF3] rounded-2xl sm:text-lg mt-4">
+                <div class="flex gap-2 px-2"> 
+                    <input class="px-2 py-1 cursor-pointer" type="checkbox" data-id="${todo.id}">
+                    <p class="px-2 py-1">sadad</p>
+                </div>
+                <div class="flex gap-2 sm:flex-row flex-col ">
+                    <div class="flex justify-between ">
+                        <p class="px-2 py-1 w-[90px]">dasd</p>
+                        <p class="px-2 py-1 ">sdad</p>
+                    </div>
+                    <button class="rounded-xl bg-[#9480DB] px-2 py-1 cursor-pointer" data-id="${
+                      todo.id
+                    }">Delete</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
