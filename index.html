@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do</title>
+    <link rel="stylesheet" href="./build/output.css">
+    <script src="build/script.js"></script>
+</head>
+<body class="bg-[#f6f5f9] text-[#0e0d12] flex">
+    <div class="flex flex-col p-8 px-3 h-screen bg-[#E3DEF3] rounded-r-2xl lg:w-[10%] w-36">
+        <div class="flex flex-col mb-2">
+            <button id="Today" class="text-left p-1 rounded-lg hover:bg-[#9480db] transition-all 0.3s cursor-pointer">Today</button>
+            <button id="Upcoming" class="text-left p-1 rounded-lg hover:bg-[#9480db] transition-all 0.3s cursor-pointer">Upcoming</button>
+        </div>
+        <div class="flex flex-col mt-4">
+            <button id="Home" class="text-left p-1 rounded-lg hover:bg-[#9480db] transition-all 0.3s cursor-pointer">Home</button>
+            <button id="Work" class="text-left p-1 rounded-lg hover:bg-[#9480db] transition-all 0.3s cursor-pointer">Work</button>
+            <button id="Hobbies" class="text-left p-1 rounded-lg hover:bg-[#9480db] transition-all 0.3s cursor-pointer">Hobbies</button>
+        </div>
+    </div>
+    <div class="p-8 w-[80%] mx-auto">
+        <div class="flex justify-between ">
+            <h1 id="CurrentView" class="text-5xl align-middle"></h1>
+            <button id="NewTodoBtn" class="rounded-xl bg-[#9480DB] px-2 py-1 cursor-pointer">New ToDo</button>
+        </div>
+        <div id="NewTodo" class="hidden">
+        <div class="flex gap-2 p-5 justify-between bg-[#E3DEF3] rounded-2xl text-lg mt-4">
+            <input id="TodoNameField" type="text" placeholder="New ToDo">
+            <form class="flex gap-2">
+                <select id="List" name="lists">
+                    <option value="Home">Home</option>
+                    <option value="Work">Work</option>
+                    <option value="Hobbies">Hobbies</option>
+                </select>
+                <input id="TodoDateField" type="date">
+                <button id="submit" class="rounded-xl bg-[#9480DB] px-2 py-1 cursor-pointer" type="submit">Add ToDo</button>
+            </form>
+        </div>
+    </div>
+        <div id="cards" class="mt-4">
+            
+        </div>
+    </div>
+</body>
+</html>

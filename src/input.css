@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer components {
+    .completed {
+    text-decoration: line-through;
+    font-style: italic;
+    color: #2b2b2b;
+    font-weight: bold
+}
+}
